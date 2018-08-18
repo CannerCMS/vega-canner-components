@@ -1,0 +1,21 @@
+{
+  "name": "@canner/vega-chart-line",
+  "version": "0.0.1",
+  "description": "chart-line",
+  "main": "lib/index.js",
+  "scripts": {},
+  "keywords": [
+    "cms",
+    "chart",
+    "line",
+    "canner"
+  ],
+  "author": "canner",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
