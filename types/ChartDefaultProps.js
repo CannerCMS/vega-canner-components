@@ -2,5 +2,8 @@
 import type {FieldId} from './DefaultProps';
 
 export type ChartDefaultProps = {|
-  refId: FieldId
+  refId: FieldId,
+  value: {
+    chartData: Array<*>
+  }
 |};
