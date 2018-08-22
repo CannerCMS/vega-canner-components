@@ -1,22 +1,19 @@
 // @flow
-import React, { Component } from "react";
+import React from "react";
+import Vega from 'react-vega';
+
+import createSpec from './createSpec';
 
 // types
 import type {ChartDefaultProps} from 'types/ChartDefaultProps';
+import type {UIParams} from './types';
 
 type Props = ChartDefaultProps & {
-  uiParams: {
-  }
+  uiParams: UIParams
 };
 
-export default class LineChart extends Component<Props> {
-  static defaultProps = {
-  }
+const LineChart = ({ value, uiParams }: Props) => ((
+  <Vega spec={createSpec(uiParams)} data={{table: value}} />
+));
 
-  render() {
-    return (
-      <div
-      />
-    );
-  }
-}
+export default LineChart;
