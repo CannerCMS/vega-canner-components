@@ -1,0 +1,26 @@
+{
+  "name": "@canner/vega-charts",
+  "version": "0.0.1",
+  "description": "canner charts",
+  "main": "lib/index.js",
+  "scripts": {},
+  "keywords": [
+    "cms",
+    "chart",
+    "canner"
+  ],
+  "author": "canner",
+  "license": "ISC",
+  "dependencies": {
+    "@canner/vega-chart-scatter": "^0.0.1",
+    "@canner/vega-chart-bar": "^0.0.1",
+    "@canner/vega-chart-line": "^0.0.1",
+    "@canner/vega-chart-pie": "^0.0.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
