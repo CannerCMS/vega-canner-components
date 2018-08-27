@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-pie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "chart-pie",
   "main": "lib/index.js",
   "scripts": {},
