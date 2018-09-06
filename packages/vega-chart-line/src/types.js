@@ -12,5 +12,4 @@ export type UIParams = {
   },
   width?: number,
   height?: number,
-  getValue?: Function
 };

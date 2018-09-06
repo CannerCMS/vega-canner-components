@@ -13,7 +13,7 @@ type Props = ChartDefaultProps & {
 };
 
 const PieChart = ({ value, uiParams }: Props) => ((
-  <Vega spec={createSpec(uiParams)} data={{table: uiParams.getValue ? uiParams.getValue(value) : value}} />
+  <Vega spec={createSpec(uiParams)} data={{table: value}} />
 ));
 
 export default PieChart;

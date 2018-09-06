@@ -12,7 +12,7 @@ type Props = ChartDefaultProps & {
 
 const VegaChart = ({ value, uiParams }: Props) => {
   return (
-    <Vega spec={uiParams.spec} data={uiParams.getValue ? uiParams.getValue(value) : value} />
+    <Vega spec={uiParams.spec} data={value} />
   )
 };
 

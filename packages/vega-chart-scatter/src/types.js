@@ -15,5 +15,4 @@ export type UIParams = {
   width?: number,
   height?: number,
   fill?: string, // color
-  getValue?: Function,
 };

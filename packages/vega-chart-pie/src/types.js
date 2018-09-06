@@ -10,5 +10,4 @@ export type UIParams = {
     range?: string,
     field?: string
   },
-  getValue?: Function
 };
