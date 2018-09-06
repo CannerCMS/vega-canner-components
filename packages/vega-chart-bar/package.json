@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-bar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "chart-bar",
   "main": "lib/index.js",
   "scripts": {},
