@@ -15,7 +15,8 @@
     "@canner/vega-chart-bar": "^0.0.2",
     "@canner/vega-chart-line": "^0.0.2",
     "@canner/vega-chart-pie": "^0.0.2",
-    "@canner/vega-chart-scatter": "^0.0.2"
+    "@canner/vega-chart-scatter": "^0.0.2",
+    "@canner/vega-chart-default": "^0.0.2"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0"

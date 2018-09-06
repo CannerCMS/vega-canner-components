@@ -9,11 +9,9 @@ export type UIParams = {
     field: string,
     scale?: string
   },
-  text: {
-    field: string,
-  },
   width?: number,
   height?: number,
   fill?: string, // color
+  spec?: Object,
   getValue?: Function,
-};
+}

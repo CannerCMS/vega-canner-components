@@ -9,6 +9,7 @@ import LineChartDemo from './demos/linechart';
 import BarChartDemo from './demos/barchart';
 import PieChartDemo from './demos/piechart';
 import ScatterChartDemo from './demos/scatterchart';
+import DefaultChartDemo from './demos/defaultchart';
 
 const {Content, Sider} = Layout;
 
@@ -38,6 +39,7 @@ class Demo extends Component {
             <Menu.Item key="bar-chart">Bar Chart</Menu.Item>
             <Menu.Item key="pie-chart">Pie Chart</Menu.Item>
             <Menu.Item key="scatter-chart">Scatter Chart</Menu.Item>
+            <Menu.Item key="default-chart">Default Chart</Menu.Item>
           </Menu>
         </Sider>
         <Layout style={{ padding: '0 24px 24px' }}>
@@ -47,6 +49,7 @@ class Demo extends Component {
             {selectKey === 'bar-chart' ? <BarChartDemo/> : null}
             {selectKey === 'pie-chart' ? <PieChartDemo/> : null}
             {selectKey === 'scatter-chart' ? <ScatterChartDemo/> : null}
+            {selectKey === 'default-chart' ? <DefaultChartDemo/> : null}
             </Context.Provider>
           </Content>
         </Layout>

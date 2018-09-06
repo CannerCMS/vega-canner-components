@@ -9,5 +9,6 @@ export type UIParams = {
   color: {
     range?: string,
     field?: string
-  }
+  },
+  getValue?: Function
 };

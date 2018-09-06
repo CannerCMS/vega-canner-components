@@ -11,5 +11,6 @@ export type UIParams = {
     scale?: string // https://vega.github.io/vega/docs/scales/#types // default linear
   },
   width?: number,
-  height?: number
+  height?: number,
+  getValue?: Function
 };
