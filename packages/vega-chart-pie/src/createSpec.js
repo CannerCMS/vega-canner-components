@@ -11,7 +11,6 @@ const createSpec = ({
   $schema: 'https://vega.github.io/schema/vega/v4.json',
   width: width,
   height: height,
-  autosize: 'none',
 
   signals: [
     {
@@ -53,9 +52,14 @@ const createSpec = ({
     {
       name: 'color',
       type: 'ordinal',
-      range: {scheme: color.range || 'category20'}
+      range: {scheme: color.range || 'set3'}
     }
   ],
+
+  'legends': [{
+    fill: 'color',  
+    orient: 'right',
+  }],
 
   marks: [
     {
@@ -65,7 +69,8 @@ const createSpec = ({
         enter: {
           fill: {scale: 'color', field: color.field || 'id'},
           x: {signal: 'width / 2'},
-          y: {signal: 'height / 2'}
+          y: {signal: 'height / 2'},
+          tooltip: {"signal": `datum.${field}`}
         },
         update: {
           startAngle: {field: 'startAngle'},
