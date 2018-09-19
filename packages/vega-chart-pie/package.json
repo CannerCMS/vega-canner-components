@@ -17,5 +17,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "vega-tooltip": "v0.10.4"
   }
 }
