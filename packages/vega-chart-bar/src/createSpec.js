@@ -1,7 +1,7 @@
 import {UIParams} from './types';
 
 const createSpec = ({
-  fill = 'steelblue',
+  fill = '#1890ff',
   width = 500,
   height = 400,
   x,
@@ -48,8 +48,8 @@ const createSpec = ({
   ],
 
   axes: [
-    { orient: 'bottom', scale: 'xscale' },
-    { orient: 'left', scale: 'yscale' }
+    { orient: 'bottom', scale: 'xscale', title: x.title || '' },
+    { orient: 'left', scale: 'yscale', title: y.title || '' }
   ],
 
   marks: [

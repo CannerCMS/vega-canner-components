@@ -25,9 +25,11 @@ import type {PrimitiveTypes} from './types';
   uiParams: {
     x: {
       field: 'u',
+      title: 'U'
     },
     y: {
-      field: 'v'
+      field: 'v',
+      title: 'V'
     }
   }
 })

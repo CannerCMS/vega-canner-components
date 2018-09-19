@@ -1,6 +1,7 @@
 import {UIParams} from './types';
 
 const createSpec = ({
+  fill = '#1890ff',
   interpolate = 'linear',
   width = 500,
   height = 400,
@@ -44,8 +45,8 @@ const createSpec = ({
     ],
   
     axes: [
-      {orient: 'bottom', scale: 'xscale', tickCount: 20},
-      {orient: 'left', scale: 'yscale'}
+      {orient: 'bottom', scale: 'xscale', tickCount: 20, title: x.title || ''},
+      {orient: 'left', scale: 'yscale', title: y.title || ''}
     ],
   
     marks: [
@@ -57,8 +58,9 @@ const createSpec = ({
             x: {scale: 'xscale', field: x.field},
             y: {scale: 'yscale', field: y.field},
             y2: {scale: 'yscale', value: 0},
-            interpolate: {signal: 'interpolate'}
-          }
+            interpolate: {signal: 'interpolate'},
+            stroke: {value: fill},
+          },
         }
       }
     ]
