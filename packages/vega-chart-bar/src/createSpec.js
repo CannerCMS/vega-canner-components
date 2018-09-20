@@ -1,16 +1,20 @@
+import {withResponsive} from '../../../utils';
 import {UIParams} from './types';
 
 const createSpec = ({
   fill = '#1890ff',
-  width = 500,
-  height = 400,
+  width = '100%',
+  height = '100%',
   x,
   y,
 }: UIParams) =>({
   $schema: 'https://vega.github.io/schema/vega/v4.json',
   width: width,
   height: height,
-  padding: 5,
+
+  autosize: {
+    type: 'fit',
+  },
 
   data: [
     {
@@ -26,7 +30,7 @@ const createSpec = ({
         {events: 'rect:mouseover', update: 'datum'},
         {events: 'rect:mouseout',  update: '{}'}
       ]
-    }
+    },
   ],
 
   scales: [
@@ -58,12 +62,12 @@ const createSpec = ({
       from: {data:'table'},
       encode: {
         enter: {
+        },
+        update: {
           x: {scale: 'xscale', field: x.field},
           width: {scale: 'xscale', band: 1},
           y: {scale: 'yscale', field: y.field},
-          y2: {scale: 'yscale', value: 0}
-        },
-        update: {
+          y2: {scale: 'yscale', value: 0},
           fill: {value: fill},
           fillOpacity: [{value: 1}]
         },
@@ -76,18 +80,18 @@ const createSpec = ({
       type: 'text',
       encode: {
         enter: {
+          fill: {value: '#333'},
           align: {value: 'center'},
           baseline: {value: 'bottom'},
-          fill: {value: '#333'}
+          fillOpacity: [
+            {test: 'datum === tooltip', value: 0},
+            {value: 1}
+          ]
         },
         update: {
           x: {scale: 'xscale', signal: `tooltip.${x.field}`, band: 0.5},
           y: {scale: 'yscale', signal: `tooltip.${y.field}`, offset: -2},
           text: {signal: `tooltip.${y.field}`},
-          fillOpacity: [
-            {test: 'datum === tooltip', value: 0},
-            {value: 1}
-          ]
         }
       }
     }
@@ -95,4 +99,4 @@ const createSpec = ({
 }
 );
 
-export default createSpec;
+export default withResponsive(createSpec);

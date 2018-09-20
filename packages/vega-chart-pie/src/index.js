@@ -13,12 +13,16 @@ type Props = ChartDefaultProps & {
   uiParams: UIParams
 };
 
+const style = {height: 'inherit', width: 'inherit'};
+
 class PieChart extends React.Component<Props> {
   // $FlowFixMe
   vega: any = React.createRef()
 
   componentDidMount() {
-    vegaTooltip(this.vega.current.view);
+    if (this.vega.current.view) {
+      vegaTooltip(this.vega.current.view);
+    }
   }
 
   render() {
@@ -28,7 +32,7 @@ class PieChart extends React.Component<Props> {
     } = this.props;
 
     return (
-      <Vega spec={createSpec(uiParams)} data={{table: value}} ref={this.vega} />
+      <Vega style={style} spec={createSpec(uiParams)} data={{table: value}} ref={this.vega} />
     );
   }
 }
