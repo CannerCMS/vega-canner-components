@@ -22,6 +22,16 @@ const createSpec = ({
     { name: 'yField',  value: x.field },
     { name: 'xField',  value: y.field },
     { name: 'nullGap',  value: 0 },
+    {
+      name: 'tickCount',
+      value: 1,
+      "on": [
+        {
+          "events": {'signal': 'width'},
+          "update": 'width/70'
+        }
+      ]
+    }
   ],
 
   data: [
@@ -57,7 +67,8 @@ const createSpec = ({
   axes: [
     {
       orient: 'bottom',  scale: 'xscale',  offset: 5,  format: 's',
-      title: x.title || ''
+      title: x.title || '',
+      tickCount: {signal: 'tickCount'}
     },
     {
       orient: 'left',  scale: 'yscale',  offset: 5,  format: 's',

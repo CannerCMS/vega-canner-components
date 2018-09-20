@@ -23,6 +23,16 @@ const createSpec = ({
         name: 'interpolate',
         value: interpolate
       },
+      {
+        name: 'tickCount',
+        value: 1,
+        "on": [
+          {
+            "events": {'signal': 'width'},
+            "update": 'width/70'
+          }
+        ]
+      }
     ],
   
     data: [
@@ -50,7 +60,7 @@ const createSpec = ({
     ],
   
     axes: [
-      {orient: 'bottom', scale: 'xscale', tickCount: 20, title: x.title || ''},
+      {orient: 'bottom', scale: 'xscale', tickCount: {signal: 'tickCount'}, title: x.title || ''},
       {orient: 'left', scale: 'yscale', title: y.title || ''}
     ],
   
