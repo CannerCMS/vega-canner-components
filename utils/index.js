@@ -27,7 +27,6 @@ export const withResponsive = (createSpec: Function) => (
     const spec: any = createSpec(props);
     if (typeof spec.width === 'string') toResponse(spec, 'width');
     if (typeof spec.height === 'string') toResponse(spec, 'height');
-    console.warn(spec);
     return spec;
   }
 );
