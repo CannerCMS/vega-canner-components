@@ -19,7 +19,9 @@ import type {PrimitiveTypes} from './types';
     {"id": 6, "field": 8}
   ],
   uiParams: {
-    field: 'field'
+    field: 'field',
+    height: 400,
+    width: 400
   }
 })
 class PieChartDemo1 extends React.Component<PrimitiveTypes<*>> {

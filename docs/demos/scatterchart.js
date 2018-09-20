@@ -23,6 +23,7 @@ import type {PrimitiveTypes} from './types';
     {"u": 19, "v": 49}, {"u": 20, "v": 15}
   ],
   uiParams: {
+    height: 400,
     x: {
       field: 'u',
       title: 'X title'

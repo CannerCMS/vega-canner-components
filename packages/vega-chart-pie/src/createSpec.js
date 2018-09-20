@@ -1,10 +1,11 @@
+import {withResponsive} from '../../../utils';
 import {UIParams} from './types';
 
 const createSpec = ({
   innerRadius = 0,
   sort = false,
-  width = 250,
-  height = width,
+  width = '100%',
+  height = '100%',
   color = {},
   field
 }: UIParams) =>({
@@ -30,7 +31,7 @@ const createSpec = ({
     },
     {
       name: 'sort', value: sort
-    }
+    },
   ],
 
   data: [
@@ -45,7 +46,7 @@ const createSpec = ({
           sort: {signal: 'sort'}
         }
       ]
-    }
+    },
   ],
 
   scales: [
@@ -53,7 +54,7 @@ const createSpec = ({
       name: 'color',
       type: 'ordinal',
       range: {scheme: color.range || 'set3'}
-    }
+    },
   ],
 
   'legends': [{
@@ -68,11 +69,11 @@ const createSpec = ({
       encode: {
         enter: {
           fill: {scale: 'color', field: color.field || 'id'},
-          x: {signal: 'width / 2'},
-          y: {signal: 'height / 2'},
-          tooltip: {"signal": `datum.${field}`}
         },
         update: {
+          x: {signal: 'width / 2'},
+          y: {signal: 'height / 2'},
+          tooltip: {"signal": `datum.${field}`},
           startAngle: {field: 'startAngle'},
           endAngle: {field: 'endAngle'},
           padAngle: {signal: 'padAngle'},
@@ -85,4 +86,4 @@ const createSpec = ({
   ]
 });
 
-export default createSpec;
+export default withResponsive(createSpec);

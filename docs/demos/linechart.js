@@ -44,11 +44,13 @@ class LineChartDemo1 extends React.Component<PrimitiveTypes<*>> {
     return (
       <React.Fragment>
         <Divider>LineChart</Divider>
-        <LineChart
-          refId={new RefId("lineChart")}
-          value={data}
-          uiParams={uiParams}
-        />
+        <div style={{height: 500, width: '100%'}}>
+          <LineChart
+            refId={new RefId("lineChart")}
+            value={data}
+            uiParams={uiParams}
+          />
+        </div>
       </React.Fragment>
     );
   }

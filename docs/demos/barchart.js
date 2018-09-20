@@ -21,6 +21,7 @@ import type {PrimitiveTypes} from './types';
     {category: 'H', amount: 87}
   ],
   uiParams: {
+    width: '80%',
     x: {
       field: 'category',
       title: 'Category'
@@ -42,11 +43,13 @@ class BarChartDemo1 extends React.Component<PrimitiveTypes<*>> {
     return (
       <React.Fragment>
         <Divider>BarChart</Divider>
-        <BarChart
-          refId={new RefId('barChart')}
-          value={data}
-          uiParams={uiParams}
-        />
+        <div style={{height: 400}}>
+          <BarChart
+            refId={new RefId('barChart')}
+            value={data}
+            uiParams={uiParams}
+          />
+        </div>
       </React.Fragment>
     );
   }

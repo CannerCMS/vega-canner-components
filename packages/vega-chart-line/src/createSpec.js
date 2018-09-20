@@ -1,10 +1,11 @@
+import {withResponsive} from '../../../utils';
 import {UIParams} from './types';
 
 const createSpec = ({
   fill = '#1890ff',
   interpolate = 'linear',
-  width = 500,
-  height = 400,
+  width = '100%',
+  height = '100%',
   x,
   y,
 }: UIParams) =>({
@@ -12,12 +13,16 @@ const createSpec = ({
     width: width,
     height: height,
     padding: 5,
-  
+
+    autosize: {
+      type: 'fit',
+    },
+
     signals: [
       {
         name: 'interpolate',
         value: interpolate
-      }
+      },
     ],
   
     data: [
@@ -54,7 +59,7 @@ const createSpec = ({
         type: 'line',
         from: {data: 'table'},
         encode: {
-          enter: {
+          update: {
             x: {scale: 'xscale', field: x.field},
             y: {scale: 'yscale', field: y.field},
             y2: {scale: 'yscale', value: 0},
@@ -66,4 +71,4 @@ const createSpec = ({
     ]
 });
 
-export default createSpec;
+export default withResponsive(createSpec);

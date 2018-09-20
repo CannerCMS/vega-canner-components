@@ -1,8 +1,9 @@
+import {withResponsive} from '../../../utils';
 import {UIParams} from './types';
 
 const createSpec = ({
-  width = 500,
-  height = 400,
+  width = '100%',
+  height = '100%',
   fill = '#1890ff',
   text,
   x,
@@ -12,12 +13,15 @@ const createSpec = ({
   width: width,
   height: height,
   padding: 5,
-  autosize: {type: 'fit',  resize: true},
+  autosize: {
+    type: 'fit',
+    resize: true
+  },
 
   signals: [
     { name: 'yField',  value: x.field },
     { name: 'xField',  value: y.field },
-    { name: 'nullGap',  value: 0 }
+    { name: 'nullGap',  value: 0 },
   ],
 
   data: [
@@ -87,4 +91,4 @@ const createSpec = ({
   ]
 });
 
-export default createSpec;
+export default withResponsive(createSpec);

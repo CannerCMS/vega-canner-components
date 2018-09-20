@@ -12,8 +12,10 @@ type Props = ChartDefaultProps & {
   uiParams: UIParams
 };
 
+const style = {height: 'inherit', width: 'inherit'};
+
 const ScatterChart = ({ value, uiParams }: Props) => ((
-  <Vega spec={createSpec(uiParams)} data={{table: value}} />
+  <Vega style={style} spec={createSpec(uiParams)} data={{table: value}} />
 ));
 
 export default ScatterChart;
