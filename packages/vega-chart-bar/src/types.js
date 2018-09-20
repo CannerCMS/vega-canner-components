@@ -11,7 +11,7 @@ export type UIParams = {
     scale?: string,
     title?: string,
   },
-  width?: number,
-  height?: number,
+  width?: number | string,
+  height?: number | string,
   fill?: string, // color
 }
