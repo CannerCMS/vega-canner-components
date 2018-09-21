@@ -40,7 +40,6 @@ export const withTooltip = (WrappedComponent: React.ComponentType<any>) => {
     vegaRef: any = React.createRef()
 
     componentDidMount() {
-      console.warn(this.vegaRef);
       if (this.vegaRef.current && this.vegaRef.current.view) {
         vegaTooltip(this.vegaRef.current.view);
       }
