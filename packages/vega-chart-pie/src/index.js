@@ -1,9 +1,9 @@
 // @flow
 import React from "react";
 import Vega from 'react-vega';
-import vegaTooltip from 'vega-tooltip';
 
 import createSpec from './createSpec';
+import {withTooltip} from '../../../utils';
 
 // types
 import type {ChartDefaultProps} from 'types/ChartDefaultProps';
@@ -15,24 +15,16 @@ type Props = ChartDefaultProps & {
 
 const style = {height: 'inherit', width: 'inherit'};
 
+@withTooltip
 class PieChart extends React.Component<Props> {
-  // $FlowFixMe
-  vega: any = React.createRef()
-
-  componentDidMount() {
-    if (this.vega.current.view) {
-      vegaTooltip(this.vega.current.view);
-    }
-  }
-
   render() {
     const {
+      vegaRef,
       uiParams,
       value,
     } = this.props;
-
     return (
-      <Vega style={style} spec={createSpec(uiParams)} data={{table: value}} ref={this.vega} />
+      <Vega ref={vegaRef} style={style} spec={createSpec(uiParams)} data={{table: value}} />
     );
   }
 }

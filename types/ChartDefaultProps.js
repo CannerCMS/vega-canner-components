@@ -5,5 +5,6 @@ export type ChartDefaultProps = {|
   refId: FieldId,
   value: {
     chartData: Array<*>
-  }
+  },
+  vegaRef?: any,
 |};

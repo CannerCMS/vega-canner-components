@@ -2,12 +2,3 @@
 # yarn lockfile v1
 
 
-vega-tooltip@v0.10.4:
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/vega-tooltip/-/vega-tooltip-0.10.4.tgz#a465b7f714917e63d61d78f1fdd724f4b70c1b67"
-  dependencies:
-    vega-util "^1.7.0"
-
-vega-util@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/vega-util/-/vega-util-1.7.0.tgz#0ca0512bb8dcc6541165c34663d115d0712e0cf1"
