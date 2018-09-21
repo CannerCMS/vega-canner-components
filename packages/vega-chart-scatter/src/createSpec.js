@@ -36,14 +36,7 @@ const createSpec = ({
 
   data: [
     {
-      name: 'table',
-      transform: [
-        {
-          type: 'formula',
-          expr: `datum.${text.field}`,
-          as: 'tooltip'
-        }
-      ]
+      name: 'table'
     }
   ],
 
@@ -83,14 +76,14 @@ const createSpec = ({
       encode: {
         enter: {
           size: {value: 50},
-          tooltip: {field: 'tooltip'}
         },
         update: {
           x: {scale: 'xscale',  field: {signal: 'xField'}},
           y: {scale: 'yscale',  field: {signal: 'yField'}},
           fill: {value: fill},
           fillOpacity: {value: 0.5},
-          zindex: {value: 0}
+          zindex: {value: 0},
+          tooltip: {"signal": `datum.${text.field}`}
         },
         hover: {
           fill: {value: 'firebrick'},

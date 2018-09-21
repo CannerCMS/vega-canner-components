@@ -2,6 +2,7 @@
 import React from "react";
 import Vega from 'react-vega';
 
+import {withTooltip} from '../../../utils';
 import createSpec from './createSpec';
 
 // types
@@ -14,8 +15,18 @@ type Props = ChartDefaultProps & {
 
 const style = {height: 'inherit', width: 'inherit'};
 
-const ScatterChart = ({ value, uiParams }: Props) => ((
-  <Vega style={style} spec={createSpec(uiParams)} data={{table: value}} />
-));
+@withTooltip
+class ScatterChart extends React.Component<Props> {
+  render() {
+    const {
+      vegaRef,
+      uiParams,
+      value,
+    } = this.props;
+    return (
+      <Vega ref={vegaRef} style={style} spec={createSpec(uiParams)} data={{table: value}} />
+    );
+  }
+}
 
 export default ScatterChart;

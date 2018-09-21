@@ -77,6 +77,23 @@ const createSpec = ({
             stroke: {value: fill},
           },
         }
+      },
+      {
+        type: 'symbol',
+        from: {data: 'table'},
+        encode: {
+          update: {
+            x: {scale: 'xscale', field: x.field},
+            y: {scale: 'yscale', field: y.field},
+            fill: {value: fill},
+            tooltip: {'signal': `datum.${x.field}`},
+            size: {value: 100},
+            fillOpacity: {value: 0.5}
+          },
+          hover: {
+            size: {value: 300}
+          }
+        }
       }
     ]
 });
