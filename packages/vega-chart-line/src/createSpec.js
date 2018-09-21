@@ -25,7 +25,7 @@ const createSpec = ({
       },
       {
         name: 'tickCount',
-        value: 1,
+        value: width/70 || 2,
         "on": [
           {
             "events": {'signal': 'width'},

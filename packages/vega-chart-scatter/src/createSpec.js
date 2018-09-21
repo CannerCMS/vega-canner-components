@@ -24,7 +24,7 @@ const createSpec = ({
     { name: 'nullGap',  value: 0 },
     {
       name: 'tickCount',
-      value: 1,
+      value: width/70 || 2,
       "on": [
         {
           "events": {'signal': 'width'},
@@ -86,7 +86,8 @@ const createSpec = ({
           tooltip: {"signal": `datum.${text.field}`}
         },
         hover: {
-          fill: {value: 'firebrick'},
+          fill: {value: fill},
+          size: 300,
           fillOpacity: {value: 1},
           zindex: {value: 1}
         }

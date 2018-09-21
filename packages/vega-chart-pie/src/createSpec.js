@@ -32,6 +32,16 @@ const createSpec = ({
     {
       name: 'sort', value: sort
     },
+    {
+      name: 'legendSize',
+      value: width/2 || 20,
+      "on": [
+        {
+          "events": {'signal': 'width'},
+          "update": 'width/2'
+        }
+      ]
+    }
   ],
 
   data: [
@@ -60,6 +70,7 @@ const createSpec = ({
   'legends': [{
     fill: 'color',  
     orient: 'right',
+    symbolSize: {signal: 'legendSize'}
   }],
 
   marks: [
