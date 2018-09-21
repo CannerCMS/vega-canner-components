@@ -1,4 +1,7 @@
 // @flow
+import * as React from 'react';
+import vegaTooltip from 'vega-tooltip';
+
 type size = number | string;
 
 export const percentStrToFloat = (percent: size) => {
@@ -30,3 +33,23 @@ export const withResponsive = (createSpec: Function) => (
     return spec;
   }
 );
+
+export const withTooltip = (WrappedComponent: React.ComponentType<any>) => {
+  return class extends React.Component<any> {
+    // $FlowFixMe
+    vegaRef: any = React.createRef()
+
+    componentDidMount() {
+      console.warn(this.vegaRef);
+      if (this.vegaRef.current && this.vegaRef.current.view) {
+        vegaTooltip(this.vegaRef.current.view);
+      }
+    }
+
+    render() {
+
+      // $FlowFixMe
+      return <WrappedComponent vegaRef={this.vegaRef} {...this.props} />;
+    }
+  }
+}
