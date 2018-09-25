@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-charts-utils",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "canner charts",
   "main": "lib/index.js",
   "scripts": {},

@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-scatter",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "chart-scatter",
   "main": "lib/index.js",
   "scripts": {},
@@ -16,7 +16,7 @@
     "lib"
   ],
   "dependencies": {
-    "@canner/vega-charts-utils": "^0.0.6"
+    "@canner/vega-charts-utils": "^0.0.7"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
