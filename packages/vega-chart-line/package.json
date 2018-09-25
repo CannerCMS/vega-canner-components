@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-line",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "chart-line",
   "main": "lib/index.js",
   "scripts": {},

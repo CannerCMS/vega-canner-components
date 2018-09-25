@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-scatter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "chart-scatter",
   "main": "lib/index.js",
   "scripts": {},

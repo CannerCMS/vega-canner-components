@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-pie",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "chart-pie",
   "main": "lib/index.js",
   "scripts": {},
@@ -17,7 +17,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
   }
 }
