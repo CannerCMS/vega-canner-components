@@ -2,7 +2,7 @@
 import React from "react";
 import Vega from 'react-vega';
 
-import {withTooltip} from '../../../utils';
+import {withTooltip} from '@canner/vega-charts-utils';
 import createSpec from './createSpec';
 
 // types

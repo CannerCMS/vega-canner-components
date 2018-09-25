@@ -3,7 +3,7 @@ import React from "react";
 import Vega from 'react-vega';
 
 import createSpec from './createSpec';
-import {withTooltip} from '../../../utils';
+import {withTooltip} from '@canner/vega-charts-utils';
 
 // types
 import type {ChartDefaultProps} from 'types/ChartDefaultProps';
