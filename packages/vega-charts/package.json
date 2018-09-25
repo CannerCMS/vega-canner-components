@@ -11,6 +11,9 @@
   ],
   "author": "canner",
   "license": "ISC",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@canner/vega-chart-bar": "^0.0.5",
     "@canner/vega-chart-default": "^0.0.5",

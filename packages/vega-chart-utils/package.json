@@ -1,23 +1,21 @@
 {
-  "name": "@canner/vega-chart-line",
+  "name": "@canner/vega-charts-utils",
   "version": "0.0.5",
-  "description": "chart-line",
+  "description": "canner charts",
   "main": "lib/index.js",
   "scripts": {},
   "keywords": [
     "cms",
     "chart",
-    "line",
     "canner"
-  ],
-  "files": [
-    "lib"
   ],
   "author": "canner",
   "license": "ISC",
   "dependencies": {
-    "@canner/vega-charts-utils": "^0.0.5"
   },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
   },

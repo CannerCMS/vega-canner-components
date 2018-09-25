@@ -9,6 +9,9 @@
     "chart",
     "canner"
   ],
+  "files": [
+    "lib"
+  ],
   "author": "canner",
   "license": "ISC",
   "peerDependencies": {

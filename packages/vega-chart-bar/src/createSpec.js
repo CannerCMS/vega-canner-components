@@ -1,4 +1,4 @@
-import {withResponsive} from '../../../utils';
+import {withResponsive} from '@canner/vega-charts-utils';
 import {UIParams} from './types';
 
 const createSpec = ({
