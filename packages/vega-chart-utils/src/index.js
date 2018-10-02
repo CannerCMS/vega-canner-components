@@ -34,7 +34,7 @@ export const withResponsive = (createSpec: Function) => (
   }
 );
 
-export const withAutoContainerSize = (WrappedComponent: React.ComponentType<{getVegaRef: Function}>) => {
+export const withAutoContainerSize = (WrappedComponent: React.ComponentType<any>) => {
   return class extends React.Component<any> {
     // $FlowFixMe
     vegaRef: any = React.createRef()
