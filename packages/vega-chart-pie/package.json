@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-pie",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "chart-pie",
   "main": "lib/index.js",
   "scripts": {},
@@ -16,7 +16,7 @@
   "author": "canner",
   "license": "ISC",
   "dependencies": {
-    "@canner/vega-charts-utils": "^0.0.7"
+    "@canner/vega-charts-utils": "^0.0.8"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
