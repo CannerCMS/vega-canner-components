@@ -55,8 +55,7 @@ const createSpec = ({
     },
     {
       orient: 'left',  scale: 'yscale',  offset: 5,  format: 's',
-      title: y.title || '',
-      tickCount: {signal: 'height / 50'}
+      title: y.title || ''
     }
   ],
 
