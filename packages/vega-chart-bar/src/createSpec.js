@@ -48,12 +48,12 @@ const createSpec = ({
       domain: {data: 'table', field: y.field},
       nice: true,
       range: 'height'
-    }
+    },
   ],
 
   axes: [
     { orient: 'bottom', scale: 'xscale', title: x.title || '' },
-    { orient: 'left', scale: 'yscale', title: y.title || '' }
+    { orient: 'left', scale: 'yscale', title: y.title || '', tickCount: {signal: 'height / 50'} }
   ],
 
   marks: [
