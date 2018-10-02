@@ -6,5 +6,5 @@ export type ChartDefaultProps = {|
   value: {
     chartData: Array<*>
   },
-  vegaRef?: any,
+  getVegaRef?: Function,
 |};
