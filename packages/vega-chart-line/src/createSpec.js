@@ -51,7 +51,7 @@ const createSpec = ({
   
     axes: [
       {orient: 'bottom', scale: 'xscale', tickCount: {signal: 'width / 70'}, title: x.title || ''},
-      {orient: 'left', scale: 'yscale', title: y.title || '', tickCount: {signal: 'height / 50'}}
+      {orient: 'left', scale: 'yscale', title: y.title || ''}
     ],
   
     marks: [
