@@ -51,9 +51,12 @@ export const withAutoContainerSize = (WrappedComponent: React.ComponentType<any>
         const view = this.vegaRef.view;
         const el = view.container();
 
-        // Use setTimeout to get the final loaded container size
-        if (!view.width()) setTimeout(() => view.width(el.clientWidth * percentStrToFloat(width)).run(), 0);
-        if (!view.height()) setTimeout(() => view.height(el.clientHeight * percentStrToFloat(height)).run(), 0);
+        // Need a setTimeout to get the final loaded container size
+        setTimeout(() => {
+          if (!view.width())  view.width(el.clientWidth * percentStrToFloat(width));
+          if (!view.height()) view.height(el.clientHeight * percentStrToFloat(height));
+          view.run();
+        }, 0);
       }
     }
 
