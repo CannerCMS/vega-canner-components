@@ -2,7 +2,7 @@
 import React from "react";
 import Vega from 'react-vega';
 
-import {withTooltip} from '@canner/vega-charts-utils';
+import {withTooltip, withAutoContainerSize} from '@canner/vega-charts-utils';
 import createSpec from './createSpec';
 
 // types
@@ -15,16 +15,17 @@ type Props = ChartDefaultProps & {
 
 const style = {height: 'inherit', width: 'inherit'};
 
+@withAutoContainerSize
 @withTooltip
 class LineChart extends React.Component<Props> {
   render() {
     const {
-      vegaRef,
+      getVegaRef,
       uiParams,
       value,
     } = this.props;
     return (
-      <Vega ref={vegaRef} style={style} spec={createSpec(uiParams)} data={{table: value}} />
+      <Vega ref={getVegaRef} style={style} spec={createSpec(uiParams)} data={{table: value}} />
     );
   }
 }
