@@ -43,8 +43,7 @@ module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.resolve = {
     extensions: [".js"],
     alias: {
-      packages: path.resolve(__dirname, "./packages"),
-      utils: path.resolve(__dirname, "./utils"),
+      packages: path.resolve(__dirname, "../packages"),
       "@canner/react-cms-helpers": path.resolve(
         __dirname,
         "node_modules",
