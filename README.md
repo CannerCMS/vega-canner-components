@@ -12,7 +12,7 @@ https://www.canner.io/docs/advance-component-types.html
 
 ## Demo
 
-http://www.canner.io/component
+https://canner.github.io/vega-canner-components/?selectedKind=Basic%20Charts&selectedStory=Line%20Chart&full=0&addons=1&stories=1&panelRight=0
 
 ## Develop
 
@@ -26,7 +26,7 @@ $ npm run build
 $ npm run build:watch
 
 # run demo
-$ npm start
+$ npm run storybook
 ```
 
 ## Test
@@ -35,8 +35,8 @@ $ npm start
 $ lerna run test
 ```
 
-## Release
+## Deploy
 
 ```
-$ npm run release
+$ npm run deploy-storybook
 ```
