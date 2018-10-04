@@ -15,7 +15,6 @@
     "preversion": "npm run build",
     "test": "lerna exec -- jest --coverage",
     "test:watch": "lerna exec -- jest --watch --coverage",
-    "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js --mode development",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages"
