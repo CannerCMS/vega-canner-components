@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-charts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "canner charts",
   "main": "lib/index.js",
   "scripts": {},
@@ -15,11 +15,11 @@
     "lib"
   ],
   "dependencies": {
-    "@canner/vega-chart-bar": "^0.1.0",
-    "@canner/vega-chart-default": "^0.1.0",
-    "@canner/vega-chart-line": "^0.1.0",
-    "@canner/vega-chart-pie": "^0.1.0",
-    "@canner/vega-chart-scatter": "^0.1.0"
+    "@canner/vega-chart-bar": "^0.1.1",
+    "@canner/vega-chart-default": "^0.1.1",
+    "@canner/vega-chart-line": "^0.1.1",
+    "@canner/vega-chart-pie": "^0.1.1",
+    "@canner/vega-chart-scatter": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0"

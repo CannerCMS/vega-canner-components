@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-chart-bar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "chart-bar",
   "main": "lib/index.js",
   "scripts": {},
@@ -16,7 +16,7 @@
   "author": "canner",
   "license": "ISC",
   "dependencies": {
-    "@canner/vega-charts-utils": "^0.1.0",
+    "@canner/vega-charts-utils": "^0.1.1",
     "lodash.merge": "^4.6.1"
   },
   "peerDependencies": {
