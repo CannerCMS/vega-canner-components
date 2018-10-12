@@ -1,5 +1,5 @@
 // @flow
-import type {FieldId} from './DefaultProps';
+import type { FieldId } from "./DefaultProps";
 
 export type ChartDefaultProps = {|
   refId: FieldId,
@@ -7,4 +7,5 @@ export type ChartDefaultProps = {|
     chartData: Array<*>
   },
   getVegaRef?: Function,
+  spec: any
 |};
