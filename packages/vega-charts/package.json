@@ -1,6 +1,6 @@
 {
   "name": "@canner/vega-charts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "canner charts",
   "main": "lib/index.js",
   "scripts": {},
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@canner/vega-chart-bar": "^0.1.1",
-    "@canner/vega-chart-default": "^0.1.1",
+    "@canner/vega-chart-default": "^0.1.2",
     "@canner/vega-chart-line": "^0.1.1",
     "@canner/vega-chart-pie": "^0.1.1",
     "@canner/vega-chart-scatter": "^0.1.1"
