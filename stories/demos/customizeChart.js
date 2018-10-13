@@ -33,109 +33,107 @@ const props = {
       { x: 20, y: 15 }
     ]
   },
-  uiParams: {
-    spec: {
-      $schema: "https://vega.github.io/schema/vega/v4.json",
-      width: 500,
-      height: 300,
+  spec: {
+    $schema: "https://vega.github.io/schema/vega/v4.json",
+    width: 500,
+    height: 300,
 
-      signals: [
-        {
-          name: "layers",
-          value: 2,
-          on: [{ events: "mousedown!", update: "1 + (layers % 4)" }],
-          bind: { input: "select", options: [1, 2, 3, 4] }
-        },
-        {
-          name: "height",
-          update: "floor(200 / layers)"
-        },
-        {
-          name: "vheight",
-          update: "height * layers"
-        },
-        {
-          name: "opacity",
-          update: "pow(layers, -2/3)"
-        }
-      ],
+    signals: [
+      {
+        name: "layers",
+        value: 2,
+        on: [{ events: "mousedown!", update: "1 + (layers % 4)" }],
+        bind: { input: "select", options: [1, 2, 3, 4] }
+      },
+      {
+        name: "height",
+        update: "floor(200 / layers)"
+      },
+      {
+        name: "vheight",
+        update: "height * layers"
+      },
+      {
+        name: "opacity",
+        update: "pow(layers, -2/3)"
+      }
+    ],
 
-      data: [
-        {
-          name: "layer_indices",
-          transform: [
-            { type: "filter", expr: "datum.data < layers" },
-            { type: "formula", expr: "datum.data * -height", as: "offset" }
-          ]
+    data: [
+      {
+        name: "layer_indices",
+        transform: [
+          { type: "filter", expr: "datum.data < layers" },
+          { type: "formula", expr: "datum.data * -height", as: "offset" }
+        ]
+      },
+      {
+        name: "table"
+      }
+    ],
+
+    scales: [
+      {
+        name: "x",
+        type: "linear",
+        range: "width",
+        zero: false,
+        round: true,
+        domain: { data: "table", field: "x" }
+      },
+      {
+        name: "y",
+        type: "linear",
+        range: [{ signal: "vheight" }, 0],
+        nice: true,
+        zero: true,
+        domain: { data: "table", field: "y" }
+      }
+    ],
+
+    axes: [{ orient: "bottom", scale: "x", tickCount: 20 }],
+
+    marks: [
+      {
+        type: "group",
+        encode: {
+          update: {
+            width: { field: { group: "width" } },
+            height: { field: { group: "height" } },
+            clip: { value: true }
+          }
         },
-        {
-          name: "table"
-        }
-      ],
-
-      scales: [
-        {
-          name: "x",
-          type: "linear",
-          range: "width",
-          zero: false,
-          round: true,
-          domain: { data: "table", field: "x" }
-        },
-        {
-          name: "y",
-          type: "linear",
-          range: [{ signal: "vheight" }, 0],
-          nice: true,
-          zero: true,
-          domain: { data: "table", field: "y" }
-        }
-      ],
-
-      axes: [{ orient: "bottom", scale: "x", tickCount: 20 }],
-
-      marks: [
-        {
-          type: "group",
-          encode: {
-            update: {
-              width: { field: { group: "width" } },
-              height: { field: { group: "height" } },
-              clip: { value: true }
-            }
-          },
-          marks: [
-            {
-              type: "group",
-              from: { data: "layer_indices" },
-              encode: {
-                update: {
-                  y: { field: "offset" }
-                }
-              },
-              marks: [
-                {
-                  type: "area",
-                  from: { data: "table" },
-                  encode: {
-                    enter: {
-                      interpolate: { value: "monotone" },
-                      x: { scale: "x", field: "x" },
-                      fill: { value: "steelblue" }
-                    },
-                    update: {
-                      y: { scale: "y", field: "y" },
-                      y2: { scale: "y", value: 0 },
-                      fillOpacity: { signal: "opacity" }
-                    }
+        marks: [
+          {
+            type: "group",
+            from: { data: "layer_indices" },
+            encode: {
+              update: {
+                y: { field: "offset" }
+              }
+            },
+            marks: [
+              {
+                type: "area",
+                from: { data: "table" },
+                encode: {
+                  enter: {
+                    interpolate: { value: "monotone" },
+                    x: { scale: "x", field: "x" },
+                    fill: { value: "steelblue" }
+                  },
+                  update: {
+                    y: { scale: "y", field: "y" },
+                    y2: { scale: "y", value: 0 },
+                    fillOpacity: { signal: "opacity" }
                   }
                 }
-              ]
-            }
-          ]
-        }
-      ]
-    }
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 };
 
@@ -145,7 +143,7 @@ export default class CustomizeChartDemo extends React.Component<ChartTypes<*>> {
       <DefaultChart
         refId={new RefId("defaultChart")}
         value={props.data}
-        uiParams={props.uiParams}
+        spec={props.spec}
       />
     );
   }
